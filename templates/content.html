@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小说第一章</title>
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/comtent.css">
+</head>
+<body>
+    <!-- 头部分 -->
+    <header>
+        <div class="container">
+            <div class="img">
+                <a href="{% url 'novel:index' page_num=1 %}">
+                    <img src="/static/images/logo.png" alt="" srcset="">
+                </a>
+            </div>
+            <form action="{% url 'novel:search' %}" class="frm" method="post">
+                {% csrf_token %}
+                <input type="text" class="search-vl" placeholder="请输入小说名..." name="keyword">
+                <button type="submit" class="search-btn">搜索</button>
+            </form>
+        </div>
+    </header>
+    <!-- 内容部分 -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <h3 style="text-align: center;margin: 15px 0;">{{ title }}</h3>
+                <p style="font-size: 12px;color: #666;text-align: center;margin: 15px 0;">
+                    <span>作者：{{ novel.author }}</span>
+                </p>
+                <hr/>
+                <!-- 小说内容 -->
+                <!-- 用那个pre原格式不可行，不然你就直接扔在这，不然我也没办法 -->
+                <div class="main">
+                    {% for p in content %}
+                        <p style="text-indent: 2em; margin-bottom: 30px;">
+                            {{ p }}
+                        </p>
+                    {% endfor %}
+
+                </div>
+                <div class="page">
+                    <ul>
+                        <li><a href="{% url 'novel:content' book_id=novel.id chapter_num=last_chapter %}">上一章</a></li>
+                        <li><a href="{% url 'novel:content' book_id=novel.id chapter_num=next_chapter %}">下一章</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

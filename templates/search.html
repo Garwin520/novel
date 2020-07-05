@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奇想小说</title>
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <!-- 头部分 -->
+    <header>
+        <div class="container">
+            <div class="img">
+                <a href="{% url 'novel:index' page_num=1 %}">
+                    <img src="/static/images/logo.png" alt="" srcset="">
+                </a>
+            </div>
+            <form action="{% url 'novel:search'  %}" class="frm" method="post">
+                {% csrf_token %}
+                <input type="text" class="search-vl" placeholder="请输入小说名..." name="keyword">
+                <button type="submit" class="search-btn" >搜索</button>
+            </form>
+        </div>
+    </header>
+    <!-- 主体部分 -->
+    <section>
+        <div class="container">
+            <div class="row">
+                {% for novel in data %}
+                    <div>
+                    <a href="{% url 'novel:chapter' book_id=novel.id %}">
+                        <img src="{{ novel.images.url }}" alt="" srcset="">
+                        <div class="info">
+                            <h3>小说：{{ novel.book_name }}</h3>
+                            <p>{{ novel.resume }}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>

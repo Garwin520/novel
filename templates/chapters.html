@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小说详情页</title>
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/detail.css">
+</head>
+<body>
+    <!-- 头部分 -->
+    <header>
+        <div class="container">
+            <div class="img">
+                <a href="{% url 'novel:index' page_num=1 %}">
+                    <img src="/static/images/logo.png" alt="" srcset="">
+                </a>
+            </div>
+            <form action="{% url 'novel:search' %}" class="frm" method="post">
+                {% csrf_token %}
+                <input type="text" class="search-vl" placeholder="请输入小说名..." name="keyword">
+                <button type="submit" class="search-btn">搜索</button>
+            </form>
+        </div>
+    </header>
+    <!-- 主体部分 -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="img">
+                   <a href="{% url 'novel:content' book_id=novel.id chapter_num=1 %}">
+                        <img src="{{ novel.images.url }}" alt="" srcset="">
+                   </a>
+                </div>
+                <div class="detail">
+                    <p><h3>{{ novel.book_name }}</h3></p>
+                    <p>
+                        <span>作者：{{ novel.author }}</span>
+                    </p>
+                    <p style="height: 60px; overflow: auto;">简介：{{ novel.resume }}</p>
+                    <p>完结</p>
+                    <p><a href="{% url 'novel:content' book_id=novel.id chapter_num=1 %}">立刻阅读</a></p>
+                </div>
+                <div class="row">
+                    <h3 style="text-align: center;margin: 15px 0;">全部章节</h3>
+                    <ul class="items">
+                        {% for chapter in chapter_list %}
+                            <li class="item">
+                            <a href="{% url 'novel:content' book_id=novel.id chapter_num=chapter.chapter_num %}">{{ chapter.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

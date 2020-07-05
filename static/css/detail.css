@@ -1,0 +1,157 @@
+body,
+html {
+    height: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #666;
+}
+.container {
+    margin: auto;
+    width: 1200px;
+}
+img {
+    vertical-align: middle;
+}
+/* 头部开始 */
+header {
+    padding: 10px 0;
+}
+header .img {
+    display: inline-block;
+    width: 30%;
+}
+header .img img {
+    width: 127px;
+}
+header .frm {
+    display: inline-block;
+    width: 40%;
+}
+.search-vl {
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    font-size: 12px;
+    width: 245px;
+    border-radius: 2px;
+}
+.search-vl:focus {
+    outline-color: #B20303;
+}
+.search-btn {
+    padding: 4px 12px;
+    margin-left: -6px;
+    border-radius: 0 2px 2px 0;
+    background-color: #B20303;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+/* 主体部分 */
+.row {
+    margin-top: 30px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    padding: 20px;
+}
+section .img {
+    display: inline-block;
+    margin-right: 30px;
+    width: 18%;
+}
+section .img img {
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px #ccc;
+    vertical-align: baseline;
+}
+.detail {
+    display: inline-block;
+    width: 40%;
+}
+.detail p {
+    margin: 12px 0;
+    color: #666;
+}
+.detail p:nth-child(6) {
+    padding: 3px 8px;
+    width: 60px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    color: #000;
+    text-align: center;
+    border-radius: 3px;
+}
+.detail p a {
+    padding: 5px 60px;
+    border: 1px solid #eee;
+    background-color: transparent;
+    border: 1px solid #B20303;
+    color: #000;
+    border-radius: 3px;
+    transition: all .3s;
+}
+.detail p a:hover {
+    color: #fff;
+    background-color: #B20303;
+}
+.items {
+    display: flex;
+    flex-wrap: wrap;
+}
+.item {
+    width: 25%;
+    padding: 8px 0;
+    border-top: 1px solid #eee;
+}
+.item >a {
+    color: #000;
+}
+.item  >a:hover {
+    color: #B20303;
+}
+/* 
+.all {
+    display: flex;
+    padding: 8px 0;
+    border-top: 1px solid #eee;
+}
+.all >span {
+    flex: 1;
+}
+.all >span a {
+    color: #000;
+}
+.all >span a:hover {
+    color: #B20303;
+} */
+
+.page {
+    margin: 30px 0;
+    padding: 20px;
+    /* background-color: #ccc; */
+    text-align: center;
+}
+.page li {
+    display: inline-block;
+}
+.page li a {
+    display: inline-block;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    transition: all .3s;
+    text-align: center;
+}
+.page li a:hover {
+    border: 1px solid #B20303;
+    color: #000;
+}

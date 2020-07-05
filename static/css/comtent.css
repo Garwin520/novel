@@ -1,0 +1,93 @@
+body,
+html {
+    height: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #666;
+}
+.container {
+    margin: auto;
+    width: 1200px;
+}
+img {
+    vertical-align: middle;
+}
+
+/* 头部开始 */
+header {
+    padding: 10px 0;
+}
+header .img {
+    display: inline-block;
+    width: 30%;
+}
+header .img img {
+    width: 127px;
+}
+header .frm {
+    display: inline-block;
+    width: 40%;
+}
+.search-vl {
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    font-size: 12px;
+    width: 245px;
+    border-radius: 2px;
+}
+.search-vl:focus {
+    outline-color: #B20303;
+}
+.search-btn {
+    padding: 4px 12px;
+    margin-left: -6px;
+    border-radius: 0 2px 2px 0;
+    background-color: #B20303;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.row {
+    border-radius: 3px;
+    border: 1px solid #eee;
+    padding: 20px;
+    background-color: #ccc;
+}
+.main {
+    margin-top: 30px;
+}
+.main p {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.page {
+    margin: 30px 0;
+    padding: 20px;
+    /* background-color: #ccc; */
+    text-align: center;
+}
+.page li {
+    display: inline-block;
+}
+.page li a {
+    display: inline-block;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    transition: all .3s;
+    text-align: center;
+}
+.page li a:hover {
+    border: 1px solid #B20303;
+    color: #000;
+}

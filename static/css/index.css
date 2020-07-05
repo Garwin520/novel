@@ -1,0 +1,129 @@
+body,
+html {
+    height: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #666;
+}
+.container {
+    margin: auto;
+    width: 1200px;
+}
+img {
+    vertical-align: middle;
+}
+/* 头部开始 */
+header {
+    padding: 10px 0;
+}
+.img {
+    display: inline-block;
+    width: 30%;
+}
+.img img {
+    width: 127px;
+}
+header .frm {
+    display: inline-block;
+    width: 40%;
+}
+.search-vl {
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    font-size: 12px;
+    width: 245px;
+    border-radius: 2px;
+}
+.search-vl:focus {
+    outline-color: #B20303;
+}
+.search-btn {
+    padding: 4px 12px;
+    margin-left: -6px;
+    border-radius: 0 2px 2px 0;
+    background-color: #B20303;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* 主体部分 */
+.row {
+    margin-top: 30px;
+    border: 1px solid #eee;
+    display: flex;
+    border-radius: 3px;
+}
+.row > div {
+    flex: 1;
+    overflow: hidden;
+}
+.row > div > a {
+    position: relative;
+    display: inline-block;
+    padding: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    box-shadow: 1px 1px 3px #ccc;
+    transition: all .3s;
+}
+.row > div > a:hover {
+    transform: translateY(-10px);
+}
+.row > div > a:hover .info {
+    opacity: 1;
+    bottom: 12px;
+}
+.row > div > a > img {
+    width: 100%;
+    border-radius: 4px;
+}
+.row > div .info {
+    position: absolute;
+    bottom: -33px;
+    left: 12px;
+    padding: 3px;
+    box-sizing: border-box;
+    width: 90%;
+    background-color: rgba(0, 0, 0, .3);
+    color: #fff;
+    border-radius: 4px;
+    opacity: 0;
+    transition: all .3s;
+}
+.info h3 {
+    font-size: 14px;
+}
+.info p {
+    font-size: 12px;
+}
+.page {
+    margin: 30px 0;
+    padding: 20px;
+    /* background-color: #ccc; */
+    text-align: center;
+}
+.page li {
+    display: inline-block;
+}
+.page li a {
+    display: inline-block;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    transition: all .3s;
+    text-align: center;
+}
+.page li a:hover {
+    border: 1px solid #B20303;
+    color: #000;
+}
